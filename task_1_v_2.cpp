@@ -23,14 +23,14 @@ int main()
 	char* str = new char[input.size() + 1];
 	strcpy_s(str, size, input.c_str());
 	
-	char* ptr = strtok(str, ".!?");
+	char* ptr = strtok(str, ".!?;:()");
 	int sentence = 0;
 
 	while (ptr != NULL)
 	{
 		sentence++;
 
-		ptr = strtok(NULL, ".!?");
+		ptr = strtok(NULL, ".!?;:()");
 
 	}
 
