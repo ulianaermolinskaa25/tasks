@@ -9,8 +9,8 @@ int main()
 {
 	string input = "";
 	string buff;
-	ifstream in("C:/Users/USER/Desktop/input.txt");
-	ofstream out("C:/Users/USER/Desktop/output.txt");
+	ifstream in("input.txt");
+	ofstream out("output.txt");
 
 	while (getline(in, buff)) {
 		if (buff.empty()) {
