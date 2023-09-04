@@ -17,11 +17,11 @@ int main()
 			break;
 		}
 		input = input + buff;
-	}
+	} 
 
 	auto size = input.size() + 1;
 	char* str = new char[input.size() + 1];
-	strcpy_s(str, size, input.c_str());
+	strcpy_s(str, size, input.c_str()); //copying the source file
 	
 	char* ptr = strtok(str, ".!?");
 	int sentence = 0;
@@ -34,28 +34,27 @@ int main()
 
 	}
 
-	out << "Number of sentences: " << sentence << endl;
+	out << "Number of sentences: " << sentence << endl; //output of the number of srntences
 
-	strcpy_s(str, size, input.c_str());
+	strcpy_s(str, size, input.c_str()); //copying the source file
 		
 	char* ptr1 = strtok(str, " ,.!?;:()");
-	int word = 0;
-    int words = 0;
+	int num_of_words = 0;
+    int simb_words = 0;
 	
 	while (ptr1 != NULL)
 	{
-		word++;
+		num_of_words++;
 
 		if (strlen(ptr1) > 5) {
-			words++;
+			simb_words++;
 		}
 
-		ptr1 = strtok(NULL, " ,.!?;:()");
+		ptr1 = strtok(NULL, " ,.!?;:()"); 
 
 	}
 
-	out << "Number of words: " << word << endl;
-
-	out << "Number of words more than: " << words << endl;
+	out << "Number of words: " << num_of_words << endl; //output of the number of words in a sentence
+	out << "Number of words more than: " << simb_words << endl; //output of the number of words more than five characters
 	return 0;
 }
