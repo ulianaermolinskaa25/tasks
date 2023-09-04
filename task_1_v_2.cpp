@@ -19,7 +19,6 @@ int main()
 		input = input + buff;
 	}
 
-	getline(in, input);
 	auto size = input.size() + 1;
 	char* str = new char[input.size() + 1];
 	strcpy_s(str, size, input.c_str());
