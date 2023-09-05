@@ -56,6 +56,6 @@ int main()
 
 	out << "Number of words: " << num_of_words << endl;
 
-	out << "Number of words more than: " << symb_word << endl;
+	out << "Number of words longer than five characters: " << symb_word << endl;
 	return 0;
 }
