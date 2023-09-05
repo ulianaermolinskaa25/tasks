@@ -50,7 +50,8 @@ int main()
 			words++;
 		}
 
-		ptr1 = strtok(NULL, " ,.!?;:()");
+		ptr1 = strtok(NULL, " ,.!?");
+
 	}
 
 	out << "Number of words: " << word << endl;
