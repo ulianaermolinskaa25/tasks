@@ -38,9 +38,9 @@ int main()
 
 	strcpy_s(str, size, input.c_str());
 		
-	char* ptr1 = strtok(str, " ,.!?");
-	int word = 0;
-    int words = 0;
+	char* ptr1 = strtok(str, " ,.!?;:()");
+	int num_of_words = 0;
+    int symb_word = 0;
 	
 	while (ptr1 != NULL)
 	{
