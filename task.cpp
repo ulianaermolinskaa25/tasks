@@ -19,10 +19,11 @@ int main()
 		input = input + buff;
 	}
 
+	getline(in, input);
 	auto size = input.size() + 1;
 	char* str = new char[input.size() + 1];
 	strcpy_s(str, size, input.c_str());
-	
+
 	char* ptr = strtok(str, ".!?");
 	int sentence = 0;
 
@@ -37,30 +38,25 @@ int main()
 	out << "Number of sentences: " << sentence << endl;
 
 	strcpy_s(str, size, input.c_str());
-		
-	char* ptr1 = strtok(str, " ,.!?;:()");
-<<<<<<< HEAD
+
+	char* ptr1 = strtok(str, " ,.!?");
 	int word = 0;
     int words = 0;
-=======
-	int num_of_words = 0;
-    int symb_word = 0;
->>>>>>> a334ba94232264ad406992bc2b78e6effb5513b4
-	
+
 	while (ptr1 != NULL)
 	{
-		num_of_words++;
+		word++;
 
 		if (strlen(ptr1) > 5) {
-			symb_word++;
+			words++;
 		}
 
-		ptr1 = strtok(NULL, " ,.!?;:()");
+		ptr1 = strtok(NULL, " ,.!?");
 
 	}
 
-	out << "Number of words: " << num_of_words << endl;
+	out << "Number of words: " << word << endl;
 
-	out << "Number of words more than: " << symb_word << endl;
+	out << "Number of words more than: " << words << endl;
 	return 0;
 }
