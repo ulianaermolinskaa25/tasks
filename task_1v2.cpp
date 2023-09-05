@@ -38,7 +38,7 @@ int main()
 
 	strcpy_s(str, size, input.c_str());
 
-	char* ptr1 = strtok(str, " ,.!?");
+	char* ptr1 = strtok(str, " ,.!?;:()");
 	int word = 0;
     int words = 0;
 
@@ -50,7 +50,7 @@ int main()
 			words++;
 		}
 
-		ptr1 = strtok(NULL, " ,.!?");
+		ptr1 = strtok(NULL, " ,.!?;:()");
 
 	}
 
