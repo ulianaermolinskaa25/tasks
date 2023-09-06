@@ -1,3 +1,0 @@
-Number of sentences: 3
-Number of words: 37
-Number of words longer than five characters: 4
