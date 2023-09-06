@@ -57,5 +57,26 @@ int main()
 	out << "Number of words: " << num_of_words << endl;
 
 	out << "Number of words longer than five characters: " << symb_word << endl;
+	
+	
+	strcpy_s(str, size, input.c_str());
+
+	
+	strtok(str, ".!?");
+	out << "Reverse first sentence: ";
+	char* last_space_ptr = nullptr;
+	
+	do {
+
+		 last_space_ptr = strrchr(str, ' ');
+		
+		if (last_space_ptr != NULL) {
+			out << last_space_ptr + 1 << " ";
+			*last_space_ptr = '\0';
+		}
+	} while (last_space_ptr != NULL);
+
+	out << str;
+	
 	return 0;
 }
