@@ -21,6 +21,7 @@ bool is_full_square(int number)
 
 int main()
 {
+	srand(static_cast<unsigned int>(time(0)));
 	int N;
 	cout << "Input integer N: ";
 	cin >> N;
