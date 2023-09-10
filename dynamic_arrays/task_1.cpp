@@ -16,7 +16,7 @@ bool is_odd(int number)
 
 bool is_full_square(int number)
 {
-	return number == floor(sqrt(number));
+	return (sqrt(number) * sqrt(number)) == number; 
 }
 
 int main()
