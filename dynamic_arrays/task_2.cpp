@@ -84,6 +84,7 @@ int main()
 
 	delete[] array1;
 	delete[] array2;
+	delete[] result;
 
 	return 0;
 }
