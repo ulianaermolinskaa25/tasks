@@ -32,10 +32,9 @@ int main()
 	int sum = 0;
 	for (int i = 0; i < N; i++) {
 	
-		if (is_odd(array[i])) {
-			if (is_full_square(i)) {
+		if (is_odd(array[i]) && is_full_square(i)) {
 				sum += array[i];
-			}
+			
 		}
 		
 	}
