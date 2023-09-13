@@ -21,18 +21,6 @@ int* create_array(int N) {
 }
 
 int* concatenate_arrays (int N1, int N2, int * array1, int * array2 ) {
-	int* result = new int[N1 + N2];
-	for (int i = 0; i < N1; ++i) {
-		result[i] = array1[i];
-	}
-	for (int i = 0; i < N2; ++i) {
-		result[N1 + i] = array2[i];
-	}
-
-	return result;
-}
-
-int* concatenate_arrays (int N1, int N2, int * array1, int * array2 ) {
 	if (N1 < 0 || N2 < 0 || (N1 + N2) < 0) {
 		return 0;
 	}
