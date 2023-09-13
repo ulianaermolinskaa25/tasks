@@ -11,6 +11,10 @@ void fill_random(int N, int* array) {
 }
 
 int* create_array(int N) {
+	if (N < 0) {
+		cout << "Error";
+		return 0;
+	}
 	int * array = new int[N];
 	
 	return array;
@@ -29,11 +33,20 @@ int* concatenate_arrays (int N1, int N2, int * array1, int * array2 ) {
 }
 
 int* concatenate_arrays (int N1, int N2, int * array1, int * array2 ) {
+	if (N1 < 0 || N2 < 0 || (N1 + N2) < 0) {
+		return 0;
+	}
 	int* result = new int[N1 + N2];
 	for (int i = 0; i < N1; ++i) {
+		if (N1 < 0) {
+				return 0;
+		}
 		result[i] = array1[i];
 	}
 	for (int i = 0; i < N2; ++i) {
+		if (N2 < 0) {
+				return 0;
+		}
 		result[N1 + i] = array2[i];
 	}
 
@@ -41,6 +54,9 @@ int* concatenate_arrays (int N1, int N2, int * array1, int * array2 ) {
 }
 
 int min_element(int N, int* array) {
+	if (N < 0 || array == nullptr) {
+		return 0;
+	}
 	int min_elem = array[0];
 	for (int i = 0; i < N; i++) {
 		if (array[i] < min_elem) {
@@ -52,6 +68,9 @@ int min_element(int N, int* array) {
 }
 
 int max_element(int N, int* array) {
+	if (N < 0 || array == nullptr) {
+		return 0;
+	}
 	int max_elem = array[0];
 	for (int i = 0; i < N; i++) {
 		if (array[i] > max_elem) {
