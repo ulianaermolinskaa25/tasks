@@ -26,6 +26,11 @@ int main()
 	cout << "Input integer N: ";
 	cin >> N;
 
+	if (N < 0) {
+		cout << "Error";
+		return 0;
+	}
+
 	int* array = new int[N];
 	fill_random(N, array);
 
