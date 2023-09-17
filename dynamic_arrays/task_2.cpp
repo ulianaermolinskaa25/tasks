@@ -12,7 +12,7 @@ void fill_random(int N, int* array) {
 
 int* create_array(int N) {
 	if (N < 0) {
-		cout << "Error";
+		cout << "Error, N must be greater than 0!";
 		return 0;
 	}
 	int * array = new int[N];
@@ -81,6 +81,7 @@ int main()
 	int* array1 = create_array(N1);
 
 	if (array1 == nullptr) {
+		cout << "Error, N1 must be greater than 0!";
 		return 0;
 	}
 	
@@ -89,6 +90,7 @@ int main()
 	int* array2 = create_array(N2);
 
 	if (array2 == nullptr) {
+		cout << "Error, N2 must be greater than 0!";
 		return 0;
 	}
 
