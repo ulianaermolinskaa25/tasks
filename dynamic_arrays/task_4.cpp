@@ -9,14 +9,11 @@ void fill_random(int N, int* array) {
 	}
 }
 
-int sum_digit(int N) {
-	if (N <= 0) {
-		return 0;
-	}
+int sum_digit(int number) {
 	int sum = 0;
-	while (N != 0) {
-		sum += N % 10;
-		N /= 10;
+	while (number != 0) {
+		sum += number % 10;
+		number /= 10;
 	}
 	return sum;
 }
