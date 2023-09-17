@@ -79,9 +79,19 @@ int main()
 	cin >> N2;
 
 	int* array1 = create_array(N1);
+
+	if (array1 == nullptr) {
+		return 0;
+	}
+	
 	fill_random(N1, array1);
 
 	int* array2 = create_array(N2);
+
+	if (array2 == nullptr) {
+		return 0;
+	}
+
 	fill_random(N2, array2);
 
 	int* result = concatenate_arrays(N1, N2, array1, array2);
