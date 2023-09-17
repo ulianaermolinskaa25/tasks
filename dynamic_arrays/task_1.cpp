@@ -27,7 +27,7 @@ int main()
 	cin >> N;
 
 	if (N < 0) {
-		cout << "Error";
+		cout << "Error, N must be greater than 0!";
 		return 0;
 	}
 
