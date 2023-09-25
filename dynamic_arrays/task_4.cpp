@@ -4,7 +4,7 @@ using namespace std;
 
 void fill_random(int N, int* array) {
 	for (int i = 0; i < N; i++) {
-		array[i] = rand();
+		array[i] = rand() % 1000;
 	}
 }
 
