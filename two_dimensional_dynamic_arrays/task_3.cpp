@@ -1,14 +1,14 @@
 #include <iostream>
-#include <algorithm>
-
+#include <ctime>
+#include <cstdlib>
+#include <locale.h>
 
 using namespace std;
-
 
 template <class T>
 void fill_random(int N, T * array) {
 	for (int i = 0; i < N; i++) {
-		array[i] = static_cast<T>(rand () % 101);
+		array[i] = (T)(rand() % 500 / 5.0);
 		cout << array[i] << " ";
 	}
 }
@@ -53,15 +53,15 @@ T min_element(int N, T * array) {
 		return 0;
 	}
 	
-		T min_elem = array[0];
-		for (int i = 0; i < N; i++) {
-			if (array[i] < min_elem) {
-				min_elem = array[i];
-			}
+	T min_elem = array[0];
+	for (int i = 0; i < N; i++) {
+		if (array[i] < min_elem) {
+			min_elem = array[i];
 		}
+	}
 
-		cout << endl << "Minimun element:  " << min_elem;
-		return min_elem;
+	cout << endl << "Minimun element:  " << min_elem;
+	return min_elem;
 	
 }
 
@@ -94,7 +94,7 @@ int main()
 	cout << "Input N2: ";
 	cin >> N2;
 	
-	int * array1 = create_array<int>(N1);
+	int* array1 = create_array<int>(N1);
 	if (array1 == nullptr) {
 		cout << "Error, N1 must be greater than 0!";
 		return 0;
@@ -118,8 +118,7 @@ int main()
 	delete[] result1;
 	
 	//////////////////////////////////////////////////////////////////////
-	srand(static_cast<float>(time(0)));
-
+	
 	float* array3 = create_array<float>(N1);
 	if (array3 == nullptr) {
 		cout << "Error, N1 must be greater than 0!";
@@ -142,8 +141,8 @@ int main()
 	delete[] array3;
 	delete[] array4;
 	delete[] result2;
+
 	//////////////////////////////////////////////////////////////////////
-	srand(static_cast<double>(time(0)));
 
 	double* array5 = create_array<double>(N1);
 	if (array5 == nullptr) {
@@ -157,7 +156,7 @@ int main()
 		cout << "Error, N2 must be greater than 0!";
 		return 0;
 	}
-	fill_random<double>(N2, array5);
+	fill_random<double>(N2, array6);
 
 	double* result3 = concatenate_arrays<double>(N1, N2, array5, array6);
 
