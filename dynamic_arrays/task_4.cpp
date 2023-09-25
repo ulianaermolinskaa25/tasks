@@ -5,7 +5,6 @@ using namespace std;
 void fill_random(int N, int* array) {
 	for (int i = 0; i < N; i++) {
 		array[i] = rand();
-		cout << array[i] << " ";
 	}
 }
 
@@ -50,6 +49,10 @@ int main()
 	cout << endl << "Sorted array: ";
 
 	sort_array(N, array); 
+
+	for (int i = 0; i < N; i++) {
+		cout << array[i] << " ";
+	}
 
 	delete[] array;
 	array = nullptr;
