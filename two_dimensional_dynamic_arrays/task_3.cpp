@@ -82,6 +82,30 @@ T max_element(int N, T * array) {
 	
 }
 
+template <class T>
+T func_for_data_types(int N1, int N2) {
+	T* array1 = create_array<T>(N1);
+	if (array1 == nullptr) {
+		cout << "Error, N1 must be greater than 0!";
+		return 0;
+	}
+
+	T* array2 = create_array<T>(N2);
+	if (array2 == nullptr) {
+		cout << "Error, N2 must be greater than 0!";
+		return 0;
+	}
+	fill_random<T>(N1, array1);
+	fill_random<T>(N2, array2);
+
+	T* result = concatenate_arrays<T>(N1, N2, array1, array2);
+
+	T min = min_element<T>(N1 + N2, result);
+	T max = max_element<T>(N1 + N2, result);
+
+	delete[] result;
+}
+
 int main()
 {
 	srand(static_cast<int>(time(0)));
@@ -99,73 +123,19 @@ int main()
 		cout << "Error, N1 must be greater than 0!";
 		return 0;
 	}
-	fill_random<int>(N1, array1);
-
+	
 	int* array2 = create_array<int>(N2);
 	if (array2 == nullptr) {
 		cout << "Error, N2 must be greater than 0!";
 		return 0;
 	}
-	fill_random<int>(N2, array2);
-
-	int* result1 = concatenate_arrays<int>(N1, N2, array1, array2);
 	
-	int min = min_element<int>(N1 + N2, result1);
-	int max = max_element<int>(N1 + N2, result1);
+	int res1 = func_for_data_types<int>(N1, N2);
+	float res2 = func_for_data_types<float>(N1, N2);
+	double res3 = func_for_data_types<double>(N1, N2);
 
 	delete[] array1;
 	delete[] array2;
-	delete[] result1;
-	
-	//////////////////////////////////////////////////////////////////////
-	
-	float* array3 = create_array<float>(N1);
-	if (array3 == nullptr) {
-		cout << "Error, N1 must be greater than 0!";
-		return 0;
-	}
-	fill_random<float>(N1, array3);
-
-	float* array4 = create_array<float>(N2);
-	if (array4 == nullptr) {
-		cout << "Error, N2 must be greater than 0!";
-		return 0;
-	}
-	fill_random<float>(N2, array4);
-
-	float* result2 = concatenate_arrays<float>(N1, N2, array3, array4);
-
-	float min1 = min_element<float>(N1 + N2, result2);
-	float max1 = max_element<float>(N1 + N2, result2);
-
-	delete[] array3;
-	delete[] array4;
-	delete[] result2;
-
-	//////////////////////////////////////////////////////////////////////
-
-	double* array5 = create_array<double>(N1);
-	if (array5 == nullptr) {
-		cout << "Error, N1 must be greater than 0!";
-		return 0;
-	}
-	fill_random<double>(N1, array5);
-
-	double* array6 = create_array<double>(N2);
-	if (array6 == nullptr) {
-		cout << "Error, N2 must be greater than 0!";
-		return 0;
-	}
-	fill_random<double>(N2, array6);
-
-	double* result3 = concatenate_arrays<double>(N1, N2, array5, array6);
-
-	double min2 = min_element<double>(N1 + N2, result3);
-	double max2 = max_element<double>(N1 + N2, result3);
-
-	delete[] array5;
-	delete[] array6;
-	delete[] result3;
 	
 	return 0;
 }
