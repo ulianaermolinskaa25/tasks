@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Aeroflot.h"
+#include "aeroflot.h"
 
 using namespace std;
 
