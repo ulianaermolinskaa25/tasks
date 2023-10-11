@@ -18,40 +18,51 @@ void sort(AEROFLOT* array, int N) {
     for (int i = 0; i < N; i++) {
         cout << "Destination: " << array[i].destination << endl;
         cout << "Flight number: " << array[i].flight_number << endl;
-        cout << "Aircraft type: " << array[i].type_of_plane << endl;
+        cout << "Aircraft type: " << array[i].aircraft_type << endl;
         cout << endl;
     }
 }
 
 
 void search(AEROFLOT* array, int N, string search_destination) {
-    bool flight = 1;
+    int counterFind = 0;
+ 
     for (int i = 0; i < N; i++) {
         if (array[i].destination == search_destination) {
             cout << "Flight number: " << array[i].flight_number << endl;
-            cout << "Plane type: " << array[i].type_of_plane << endl;
+            cout << "Plane type: " << array[i].aircraft_type << endl;
+            counterFind++;
         }
+
     }
-    if (flight) {
-        cout << "Flight not found.";
+    if (counterFind == false) {
+        cout << "Flight not found." << endl;
     }
 }
 
+
 int main()
 {
+    int N = 7;
     AEROFLOT fl[7];
-    for (int i = 0; i < 7; i++) {
+     for (int i = 0; i < N; i++) {
         fl[i].input_info();
+        if (fl->flight_number <= 0) {
+            return 0;
+        }
+        if (fl->aircraft_type != "BOEING" && fl->aircraft_type != "Airbus") {
+            return 0;
+        }
     }
 
-    sort(fl, 7);
+    sort(fl, N);
 
     string dest; 
 
     cout << "\n\nEnter the destination you want to know about : ";
     cin >> dest;
 
-    search(fl, 7, dest);
+    search(fl, N, dest);
     return 0;
 }
 
