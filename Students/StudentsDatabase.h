@@ -1,4 +1,3 @@
-#pragma once
 class StudentsDatabase
 {
 public:
@@ -47,6 +46,10 @@ public:
         fout.close();
     }
 
+   //1. По исходному списку определить ФИО самого младшего студента на каждом курсе. 
+   //Сформировать список из этих студентов, в отдельном файле students_1.txt.
+   //Аналогично сохранение результатов для каждого следующего задания
+
     void findYoungestStudentForCourses(const string& filename)
     {
         Student student;
@@ -61,6 +64,8 @@ public:
        
         writeToFile(minStudents, filename);
     }
+
+    //2. Определить всех студентов, ФИО которых начинается на заданную букву. 
 
     void findStudentsForInitials(const string& filename, const char initial)
     {
@@ -82,6 +87,8 @@ public:
         writeToFile(initials, filename);
     }
 
+    //3. Определить всех студентов, возраст которых превышает заданный
+
     void findOlderStudents(const string& filename, const int32_t age)
     {
         vector<Student> ages;
@@ -101,26 +108,7 @@ public:
 
         writeToFile(ages, filename);
     }
-
-    void findYoungerStudents(const string& filename, const int32_t age)
-    {
-        vector<Student> ages;
-
-        for (const auto& student : students)
-        {
-            if (student.age < age)
-            {
-                ages.push_back(student);
-                //cout << student.surname << ' ' << student.name << ' ' << student.patronymic << endl;
-            }
-        }
-        if (ages.empty())
-        {
-            cout << "No students found." << endl;
-        }
-
-        writeToFile(ages, filename);
-    }
+    //4. Определить всех отличников n курса
 
     void findExcellentStudents( const string& filename, const int course) 
     {
@@ -142,6 +130,8 @@ public:
 
         writeToFile(excellentStudent, filename);
     }
+
+    //5. Определить всех неуспевающих студентов n курса
 
     void findPoorStudents(const string& filename, const int course)
     {
@@ -165,6 +155,30 @@ public:
         writeToFile(poorStudent, filename);
     }
 
+    //6. Определить всех студентов, возраст которых не превышает заданный. 
+
+    void findYoungerStudents(const string& filename, const int32_t age)
+    {
+        vector<Student> ages;
+
+        for (const auto& student : students)
+        {
+            if (student.age < age)
+            {
+                ages.push_back(student);
+                //cout << student.surname << ' ' << student.name << ' ' << student.patronymic << endl;
+            }
+        }
+        if (ages.empty())
+        {
+            cout << "No students found." << endl;
+        }
+
+        writeToFile(ages, filename);
+    }
+
+    //7. Определить студентов, имеющих средний бал успеваемости выше общего среднего бала. 
+
     void findAboveAvaragePraogessStudents(const string& filename) 
     {
        
@@ -177,6 +191,8 @@ public:
         }
 
     }
+
+    //8. Определить студентов, имеющих средний бал успеваемости выше среднего бала по его курсу. 
 
     void findAboveAvaragePraogessStudentsForCourses(const string& filename)
     {

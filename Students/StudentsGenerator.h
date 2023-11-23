@@ -1,23 +1,5 @@
-#pragma once
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <cstdlib>
-#include <ctime>
-
-using namespace std;
-
-typedef struct // Структура
-{
-    string surname;
-    string name;
-    string patronymic;
-    int age;
-    bool gender;
-    short course;
-    float progress;
-} Student;
+/*0. Создать структуру, содержащую записи со сведениями о студентах: ФИО, возраст, пол, курс, успеваемость (средний балл).
+Сгенерировать файл со списком студентов в количестве N = 100.*/
 
 class StudentsGenerator
 {
@@ -34,7 +16,7 @@ public:
 
     ofstream generate(const string& filename, const vector<Student>& students, const uint32_t N) // Генерация списка студентов, запись в файл, выыод файла со списком
     {
-        //srand(time(0));
+        srand(time(0));
 
         ofstream fout(filename);
         if (!fout.is_open())
